@@ -1,0 +1,121 @@
+:root{
+    --bg-color : #130f40;
+    --color : #fff;
+    --secondry-color : #d1ccc0;
+    --primary-color : blue;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+body{
+    background: var(--bg-color);
+}
+.mainContainer {
+    height: 100vh;
+    width: 100%;
+}
+
+.mainContainer .logo {
+    height: 80px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start; */
+    margin-left: 30px;
+    /* border: 1px solid black; */
+}
+
+.mainContainer .logo h1 {
+    color: var(--color);
+}
+
+.mainContainer .logo span {
+    color: var(--primary-color);
+}
+
+.mainContainer .uploadBox {
+    background: var(--color);
+    height: 50%;
+    width: 50%;
+    margin: 30px auto;
+    /* border: 1px solid black; */
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 15px 35px var(--primary-color);
+    /* padding: 30px; */
+
+}
+
+.dropBox {
+    background: var(--bg-color);
+    height: 85%;
+    width: 90%;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.4s ease;
+
+}
+.dropBox p{
+    color: var(--color);
+}
+.dropBox span{
+    color: var(--primary-color);
+    cursor: pointer;
+}
+.dropBox .dropImg {
+    height: 50%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* border: 1px solid black; */
+}
+
+.dropBox .dropImg img {
+    position: absolute;
+    height: 100px;
+    transition: all 0.4s ease-in;
+    transform-origin: bottom;
+
+}
+.dropImg .center{
+
+    z-index: 2;
+}
+.dropBox .InputFile{
+    display: none;
+}
+.dragged p{
+
+    color: var(--bg-color);
+    transition: all 0.4s ease;
+}
+.dragged{
+    transition: all 0.4s ease;
+    background: var(--color);
+    border: 4px dashed var(--primary-color);
+}
+.dragged .dropImg .center {
+    transform: translateY(-10px);
+}
+.dropImg .left, .dropImg .right {
+    filter: grayscale(0.5);
+}
+.dragged .dropImg .left {
+    transform: rotate(10deg) translateX(10px) scale(0.9);
+}
+
+.dragged .dropImg .right{
+    transform: rotate(-10deg) translateX(-10px) scale(0.9);
+
+}
